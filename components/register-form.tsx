@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -27,6 +28,7 @@ const isEmail = (value: string) => {
 };
 
 const RegisterForm = (props: Props) => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -40,6 +42,7 @@ const RegisterForm = (props: Props) => {
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values);
+    router.push("/success?email=" + values.email);
   };
 
   return (

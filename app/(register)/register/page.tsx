@@ -5,6 +5,8 @@ import React from "react";
 
 type Props = {};
 
+enum STEP {}
+
 const RegisterPage = (props: Props) => {
   return (
     <div className="flex h-full w-full items-center justify-center bg-[#36384D]">
